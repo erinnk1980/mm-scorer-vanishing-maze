@@ -38,10 +38,10 @@ public class App {
 			String challengeId = args[0];
 			String testPhase = args[1];
 			String submissionId = args[2];
-			String reviewerId = args[3];
-			String typeId = args[4];
-			String scoreCardId = args[5];
-			String exec = args[6];
+			String reviewerId = "3ba1e475-b870-43ee-a64d-ae9365eda888";
+			String typeId = "48c4296e-5d4a-4797-80b7-1c22f36ba698";
+			String scoreCardId = "30001852";
+			String exec = args[3];
 
 			System.out.println(exec);
 
@@ -61,11 +61,12 @@ public class App {
 				res.put("score", score);
 				res.put("testcase", i);
 				testScores.add(res);
+				System.out.println(res);
 				String output = VanishingMazeVis.output.getOutput(); // Not quite sure what to do with this
 			}
 
-			// ReviewHelper.postReview(challengeId, testPhase, submissionId, reviewerId,
-			// typeId, scoreCardId, testScores);
+			ReviewHelper.postReview(challengeId, testPhase, submissionId, reviewerId,
+			typeId, scoreCardId, testScores);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
